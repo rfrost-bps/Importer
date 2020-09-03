@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Template>
+  <detail Name="HouseTest" Description="HouseTest" MappingType="ColumnOrder" Delimiter="Tab" HasHeaders="true" />
+  <ImportTemplateItems>
+    <item ColumnNumber="1" AtomField="PortfolioDescription" AtomTable="Portfolio" DefaultValue="" ImportField="Description" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="6" AtomField="PortfolioShortName" AtomTable="Portfolio" DefaultValue="" ImportField="Portfolio Short Name" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="8" AtomField="AccountNumber" AtomTable="Portfolio" DefaultValue="" ImportField="Default Broker Account" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="11" AtomField="BrokerCode" AtomTable="Portfolio" DefaultValue="" ImportField="Default Broker" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="16" AtomField="HouseholdName" AtomTable="Portfolio" DefaultValue="" ImportField="House Code" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="18" AtomField="ManagerName" AtomTable="Portfolio" DefaultValue="" ImportField="Manager" IsAdditional="false" DateFormat="" />
+  </ImportTemplateItems>
+</Template>

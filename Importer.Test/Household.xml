@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Template>
+  <detail Name="Household" Description="Household" MappingType="ColumnName" Delimiter="Tab" HasHeaders="true" />
+  <ImportTemplateItems>
+    <item ColumnNumber="1" AtomField="PortfolioShortName" AtomTable="Portfolio" DefaultValue="" ImportField="Portfolio Short Name" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="2" AtomField="HouseholdName" AtomTable="Portfolio" DefaultValue="" ImportField="House Code" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="3" AtomField="ManagerName" AtomTable="Portfolio" DefaultValue="" ImportField="Manager" IsAdditional="false" DateFormat="" />
+  </ImportTemplateItems>
+</Template>

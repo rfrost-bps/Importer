@@ -1,0 +1,6 @@
+Model Type	Model Id	Model Name	Manager	Child Id	Allocation	Order Index	Max Allocation	Min Allocation
+Household	BFA-ESG Gro 75E25F0C0A	BFA-ESG Gro 75E25F0C0A	Bartlett	Equity	75			
+Household	BFA-ESG Gro 75E25F0C0A	BFA-ESG Gro 75E25F0C0A	Bartlett	Fixed Income	25			
+Household	BFA-ESG Gro 75E25F0C0A	BFA-ESG Gro 75E25F0C0A	Bartlett	Cash2	0			
+Household	BFA-ESG Gro 75E25F0C0A	BFA-ESG Gro 75E25F0C0A	Bartlett	Alternative	0			
+

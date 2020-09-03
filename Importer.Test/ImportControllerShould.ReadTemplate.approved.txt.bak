@@ -1,0 +1,67 @@
+{
+  "Detail": {
+    "Name": "Model",
+    "Description": "Model",
+    "MappingType": "ColumnOrder",
+    "Delimiter": "Tab",
+    "HasHeaders": true
+  },
+  "ImportTemplateItems": {
+    "Item": [
+      {
+        "ColumnNumber": 1,
+        "AtomField": "ModelTypes",
+        "AtomTable": "Model",
+        "DefaultValue": "",
+        "ImportField": "Model Type",
+        "IsAdditional": false,
+        "DateFormat": ""
+      },
+      {
+        "ColumnNumber": 2,
+        "AtomField": "ModelId",
+        "AtomTable": "Model",
+        "DefaultValue": "",
+        "ImportField": "Model Id",
+        "IsAdditional": false,
+        "DateFormat": ""
+      },
+      {
+        "ColumnNumber": 3,
+        "AtomField": "ModelName",
+        "AtomTable": "Model",
+        "DefaultValue": "",
+        "ImportField": "Model Name",
+        "IsAdditional": false,
+        "DateFormat": ""
+      },
+      {
+        "ColumnNumber": 4,
+        "AtomField": "Manager",
+        "AtomTable": "Model",
+        "DefaultValue": "",
+        "ImportField": "Manager",
+        "IsAdditional": false,
+        "DateFormat": ""
+      },
+      {
+        "ColumnNumber": 5,
+        "AtomField": "ChildId",
+        "AtomTable": "Model",
+        "DefaultValue": "",
+        "ImportField": "Child Id",
+        "IsAdditional": false,
+        "DateFormat": ""
+      },
+      {
+        "ColumnNumber": 6,
+        "AtomField": "Allocation",
+        "AtomTable": "Model",
+        "DefaultValue": "",
+        "ImportField": "Allocation",
+        "IsAdditional": false,
+        "DateFormat": ""
+      }
+    ]
+  }
+}
