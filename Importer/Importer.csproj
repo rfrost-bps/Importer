@@ -16,12 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blaze.Domain" Version="1.0.0-CI-20200903-001359" />
+    <PackageReference Include="Blaze.Domain" Version="1.0.0-CI-20200915-201942" />
     <PackageReference Include="CsvHelper" Version="15.0.5" />
+    <PackageReference Include="EventStore.Client" Version="20.6.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.5" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.0" />
   </ItemGroup>
 
 </Project>

@@ -3,8 +3,8 @@
   <detail Name="Model" Description="Model" MappingType="ColumnOrder" Delimiter="Tab" HasHeaders="true" />
   <ImportTemplateItems>
     <item ColumnNumber="1" AtomField="Description" AtomTable="Model" DefaultValue="" ImportField="Model Type" IsAdditional="false" DateFormat="" />
-    <item ColumnNumber="2" AtomField="Id" AtomTable="Model" DefaultValue="" ImportField="Model Id" IsAdditional="false" DateFormat="" />
-    <item ColumnNumber="3" AtomField="Name" AtomTable="Model" DefaultValue="" ImportField="Model Name" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="2" AtomField="Name" AtomTable="Model" DefaultValue="" ImportField="Model Id" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="3" AtomField="ShortName" AtomTable="Model" DefaultValue="" ImportField="Model Name" IsAdditional="false" DateFormat="" />
     <item ColumnNumber="4" AtomField="Manager" AtomTable="Model" DefaultValue="" ImportField="Manager" IsAdditional="false" DateFormat="" />
     <item ColumnNumber="5" AtomField="ChildId" AtomTable="Model" DefaultValue="" ImportField="Child Id" IsAdditional="false" DateFormat="" />
     <item ColumnNumber="6" AtomField="MaxAllocation" AtomTable="Model" DefaultValue="" ImportField="Allocation" IsAdditional="false" DateFormat="" />

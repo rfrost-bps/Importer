@@ -10,7 +10,7 @@
     "Item": [
       {
         "ColumnNumber": 1,
-        "AtomField": "ModelTypes",
+        "AtomField": "Description",
         "AtomTable": "Model",
         "DefaultValue": "",
         "ImportField": "Model Type",
@@ -19,7 +19,7 @@
       },
       {
         "ColumnNumber": 2,
-        "AtomField": "ModelId",
+        "AtomField": "Id",
         "AtomTable": "Model",
         "DefaultValue": "",
         "ImportField": "Model Id",
@@ -28,7 +28,7 @@
       },
       {
         "ColumnNumber": 3,
-        "AtomField": "ModelName",
+        "AtomField": "Name",
         "AtomTable": "Model",
         "DefaultValue": "",
         "ImportField": "Model Name",
@@ -55,7 +55,7 @@
       },
       {
         "ColumnNumber": 6,
-        "AtomField": "Allocation",
+        "AtomField": "MaxAllocation",
         "AtomTable": "Model",
         "DefaultValue": "",
         "ImportField": "Allocation",

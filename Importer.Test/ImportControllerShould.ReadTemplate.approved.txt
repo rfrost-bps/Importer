@@ -19,7 +19,7 @@
       },
       {
         "ColumnNumber": 2,
-        "AtomField": "Id",
+        "AtomField": "Name",
         "AtomTable": "Model",
         "DefaultValue": "",
         "ImportField": "Model Id",
@@ -28,7 +28,7 @@
       },
       {
         "ColumnNumber": 3,
-        "AtomField": "Name",
+        "AtomField": "ShortName",
         "AtomTable": "Model",
         "DefaultValue": "",
         "ImportField": "Model Name",

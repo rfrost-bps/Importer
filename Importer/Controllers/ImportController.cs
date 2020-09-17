@@ -1,16 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Blaze.Domain.Impl;
+using Blaze.Domain.Interfaces;
 using CsvHelper;
+using EventStore.ClientAPI;
 using Importer.Helpers;
 using Importer.Models;
+using Importer.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 [assembly:InternalsVisibleTo("Importer.Test")]
 namespace Importer.Controllers
@@ -20,10 +29,12 @@ namespace Importer.Controllers
     public class ImportController : ControllerBase
     {
         private readonly ILogger _logger;
+        private readonly IRebalanceRepository _repository;
 
-        public ImportController(ILogger<ImportController> logger)
+        public ImportController(ILogger<ImportController> logger, IRebalanceRepository repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         [HttpPost]
@@ -51,10 +62,55 @@ namespace Importer.Controllers
             var reader = new MultipartReader("++++++++", section.Body);
             var templateSection = await reader.ReadNextSectionAsync();
             var template = await ReadTemplate(templateSection);
-            var config = template.CreateConfiguration(_logger);
+            var recordType = Assembly.GetAssembly(typeof(IBlazeEntity))?.ExportedTypes.FirstOrDefault(t => t.Name.Equals(template.TableName()));
+
+            if (recordType == null)
+                throw new InvalidOperationException($"Cannot import records into object of type {template.TableName()}.");
+
             var importSection = await reader.ReadNextSectionAsync();
             using var stream = new StreamReader(importSection.Body);
-            using var csv = new CsvReader(stream, config);
+            var config = template.CreateConfiguration(_logger);
+            using var rdr = new CsvReader(stream, config);
+
+            var records = rdr.GetRecords(recordType);
+
+            switch (recordType.Name)
+            {
+                case "Portfolio":
+                    await _repository.SaveAsync(records.OfType<Portfolio>().ToList(), default, From);
+                    break;
+
+                case "TaxLot":
+                    await _repository.SaveAsync(records.OfType<TaxLot>().ToList(), default, From);
+                    break;
+
+                case "Security":
+                    await _repository.SaveAsync(records.OfType<Security>().ToList(), default, From);
+                    break;
+
+                case "Order":
+                    await _repository.SaveAsync(records.OfType<Order>().ToList(), default, From);
+                    break;
+
+                case "Model":
+                    await _repository.SaveAsync(records.OfType<Model>().ToList(), default, From);
+                    break;
+
+                case "Allocation":
+                    await _repository.SaveAsync(records.OfType<Allocation>().ToList(), default, From);
+                    break;
+            }
+        }
+
+        internal static EventData From<TEntity>(TEntity entity) where TEntity : IBlazeEntity
+        { 
+            entity.Id = Guid.NewGuid();
+            return new EventData(
+                entity.Id,
+                typeof(TEntity).Name,
+                true,
+                Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(entity)),
+                null);
         }
 
         internal static readonly XmlSerializer TemplateSerializer = new XmlSerializerFactory().CreateSerializer(typeof(Template));

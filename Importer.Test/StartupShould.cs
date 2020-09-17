@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Microsoft.AspNetCore.Mvc.Testing;
+using EventStore.ClientAPI;
+using Importer.Repository;
+using Microsoft.AspNetCore;
+using Microsoft.Extensions.Configuration;
 using Swashbuckle.AspNetCore.Swagger;
 using Xunit;
 
@@ -12,10 +15,14 @@ namespace Importer.Test
 
         [Theory]
         [InlineData(typeof(ISwaggerProvider))]
+        [InlineData(typeof(IEventStoreConnection))]
+        [InlineData(typeof(IRebalanceRepository))]
         public void ConfigureServices(Type service)
         {
-            var factory = new WebApplicationFactory<Startup>();
-            Assert.NotNull(factory.Services.GetService(service));
+            var host = WebHost.CreateDefaultBuilder<Startup>(null)
+                .ConfigureAppConfiguration((context, builder) => builder.AddJsonFile("appsettings.json"))
+                .Build();
+            Assert.NotNull(host.Services.GetService(service));
         }
     }
 }

@@ -10,7 +10,6 @@ namespace Importer.Helpers
     {
         public DynamicImportMap(Template importTemplate, ILogger logger)
         {
-            var typeExpression = Expression.Parameter(typeof(T), "m");
             importTemplate
                 .ImportTemplateItems
                 .Item

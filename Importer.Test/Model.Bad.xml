@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Template>
+  <detail Name="Model" Description="Model" MappingType="ColumnOrder" Delimiter="Tab" HasHeaders="true" />
+  <ImportTemplateItems>
+    <item ColumnNumber="1" AtomField="Description" AtomTable="BadModel" DefaultValue="" ImportField="Model Type" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="2" AtomField="Name" AtomTable="BadModel" DefaultValue="" ImportField="Model Id" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="3" AtomField="ShortName" AtomTable="BadModel" DefaultValue="" ImportField="Model Name" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="4" AtomField="Manager" AtomTable="BadModel" DefaultValue="" ImportField="Manager" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="5" AtomField="ChildId" AtomTable="BadModel" DefaultValue="" ImportField="Child Id" IsAdditional="false" DateFormat="" />
+    <item ColumnNumber="6" AtomField="MaxAllocation" AtomTable="BadModel" DefaultValue="" ImportField="Allocation" IsAdditional="false" DateFormat="" />
+  </ImportTemplateItems>
+</Template>
